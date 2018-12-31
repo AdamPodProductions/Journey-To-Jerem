@@ -16,7 +16,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        transform.Translate(Vector2.right * Input.GetAxisRaw("Horizontal") * moveSpeed * Time.fixedDeltaTime);
+        rb.velocity = new Vector2(Input.GetAxisRaw("Horizontal") * moveSpeed, rb.velocity.y);
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
